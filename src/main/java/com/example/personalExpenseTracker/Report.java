@@ -6,11 +6,15 @@ public class Report {
     }
 
     public void generateExpensesByCategory() {
-        //generate and print a report of expenses by type
+        for (Expense expense: expenses) {
+            System.out.println(expense.getCategory());
+        }
     }
 
     public void generateMonthlyReport() {
-        //generate and print a report for expenses in the current month
+        for(Expense expense: expenses) {
+            System.out.println(expense.getDate());
+        }
     }
 
     public void generateBudgetComparison() {

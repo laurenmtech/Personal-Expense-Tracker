@@ -9,10 +9,10 @@ public class Main {
         System.out.println("please choose from the following options");
 
         while(true) {
-            System.out.println("Add Expense (type 1)");
-            System.out.println("View Expenses (type 2)");
-            System.out.println("Generate Report (type 3)");
-            System.out.println("Exit (type 4)");
+            System.out.println("Add Expense (press 1)");
+            System.out.println("Remove Expense (press 2)");
+            System.out.println("Generate Report (press 3)");
+            System.out.println("Exit (press 4)");
 
             int choice = scanner.nextInt();
 
@@ -21,10 +21,10 @@ public class Main {
                     expenseManager.addExpense();
                     break;
                 case 2:
-                    //view expenses logic
+                    expenseManager.removeExpense();
                     break;
                 case 3:
-                    //generate report logic
+                    expenseManager.generateMonthlyReport();
                     break;
                 case 4:
                     System.out.println("You're a budgeting master! Exiting...");

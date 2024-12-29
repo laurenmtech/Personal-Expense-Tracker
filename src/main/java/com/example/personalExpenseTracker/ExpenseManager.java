@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class ExpenseManager {
     private List<Expense> expenses;
 
@@ -14,14 +16,28 @@ public class ExpenseManager {
     }
 
     public double getTotalExpenses() {
-        return expenses.stream().mapToDouble(Expense::getAmount).sum();    
+        double total = 0;
+        for (Expense expense : expenses) {
+            total += expense.getAmount();
+        }
+        return total;
     }
 
     public List<Expense> getExpensesByCategory(String category) {
-        //return expenses that match the category
+        List<Expense> byCategory = new ArrayList<>();
+        for (Expense expense : expenses) {
+            if (expense.getCategory().equals(category)) {
+                byCategory.add(expense);
+            }
+        }
     }
     
     public List<Expense> getExpensesByDate(String date) {
-        //return expenses that match the date
+        List<Expense> byDate = new ArrayList<>();
+        for (Expense expense : expenses) {
+            if (expense.getDate().equals(date)) {
+                byDate.add(expense);
+            }
+        }
     }
 }
